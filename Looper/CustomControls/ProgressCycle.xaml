@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Looper.CustomControls.ProgressCycle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Looper.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ProgressToAngleConverter x:Key="ProgressConverter"/>
+        <Style TargetType="{x:Type ProgressBar}" x:Key="ProgressBarStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid>
+                            <Ellipse Stroke="Black" Fill="{TemplateBinding Background}"/>
+                            <Ellipse Stroke="Black" Margin="30" Fill="Transparent"/>
+                            <local:Arc StrokeThickness="20" Stroke="Red" Margin="5">
+                                <local:Arc.StartAngle>
+                                    <MultiBinding Converter="{StaticResource ProgressConverter}">
+                                        <Binding Path="Minimum" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        <Binding Path="." RelativeSource="{RelativeSource TemplatedParent}"/>
+                                    </MultiBinding>
+                                </local:Arc.StartAngle>
+                                <local:Arc.EndAngle>
+                                    <MultiBinding Converter="{StaticResource ProgressConverter}">
+                                        <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        <Binding Path="." RelativeSource="{RelativeSource TemplatedParent}"/>
+                                    </MultiBinding>
+                                </local:Arc.EndAngle>
+                            </local:Arc>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Viewbox>
+            <ProgressBar x:Name="ProgBar" Style="{StaticResource ProgressBarStyle}" Width="300" Height="300" Background="Black" />
+        </Viewbox>
+        <Label x:Name="TimeLabel" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontSize="28" FontFamily="Calibri" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

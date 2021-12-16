@@ -1,0 +1,371 @@
+﻿<Window x:Class="Looper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Looper"
+        xmlns:localCC="clr-namespace:Looper.CustomControls"
+        xmlns:localSC="clr-namespace:Looper.SerialController"
+        xmlns:AVR="clr-namespace:VoiceRecorder"
+        Icon="Iconshock-Dj-Mixing-desk.ico"
+        mc:Ignorable="d"
+        Title="Looper" Height="606.334" Width="1190.667" ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Grid Background="Transparent">
+
+        <Image Source="/Pics/Looper.png" Stretch="Uniform"/>
+
+        <ComboBox x:Name="DrumKit" HorizontalAlignment="Left" Margin="946,411,0,0" VerticalAlignment="Top" Width="76" SelectionChanged="DrumList_SelectionChanged"  Visibility="{Binding IsTrialVersion}"/>
+
+        <localCC:ProgressCycle x:Name="ProgressCh1" Margin="120,250,942,245" />
+        <localCC:ProgressCycle x:Name="ProgressCh2" Margin="284,250,780,245"/>
+        <localCC:ProgressCycle x:Name="ProgressCh3" Margin="453,251,616,245"/>
+        <localCC:ProgressCycle x:Name="ProgressCh4" Margin="611,249,451,245"/>
+        <localCC:ProgressCycle x:Name="ProgressCh5" Margin="775,251,291,244"/>
+        <localCC:ProgressCycle x:Name="ProgressDrum" Margin="946,251,121,244"/>
+
+        <localCC:RecButton x:Name="RecCh1" HorizontalAlignment="Left" Margin="134,485,0,0" VerticalAlignment="Top" Height="95" Width="95" CustomStopClick="RecCh1_CustomStopClick" CustomClick="RecCh1_CustomClick" CustomClickRight="RecCh1_CustomClickRight" ToolTip="Right click to open file"/>
+        <localCC:RecButton x:Name="RecCh2" HorizontalAlignment="Left" Margin="300,485,0,0" VerticalAlignment="Top" Height="95" Width="95" CustomStopClick="RecCh2_CustomStopClick" CustomClick="RecCh2_CustomClick" CustomClickRight="RecCh2_CustomClickRight" ToolTip="Right click to open file"/>
+        <localCC:RecButton x:Name="RecCh3" HorizontalAlignment="Left" Margin="465,485,0,0" VerticalAlignment="Top" Height="95" Width="95" CustomStopClick="RecCh3_CustomStopClick" CustomClick="RecCh3_CustomClick" CustomClickRight="RecCh3_CustomClickRight" ToolTip="Right click to open file"/>
+        <localCC:RecButton x:Name="RecCh4" HorizontalAlignment="Left" Margin="628,485,0,0" VerticalAlignment="Top" Height="95" Width="95" CustomStopClick="RecCh4_CustomStopClick" CustomClick="RecCh4_CustomClick" CustomClickRight="RecCh4_CustomClickRight" ToolTip="Right click to open file"/>
+        <localCC:RecButton x:Name="RecCh5" HorizontalAlignment="Left" Margin="793,485,0,0" VerticalAlignment="Top" Height="95" Width="95" CustomStopClick="RecCh5_CustomStopClick" CustomClick="RecCh5_CustomClick" CustomClickRight="RecCh5_CustomClickRight" ToolTip="Right click to open file"/>
+        <localCC:RecButton x:Name="RecDrum" HorizontalAlignment="Left" Margin="958,485,0,0" VerticalAlignment="Top" Height="95" Width="95" CustomStopClick="RecCh6_CustomStopClick" CustomClick="RecDrum_CustomClick" ToolTip="Right click to open file"/>
+
+        <localCC:ChannelVolumeSlider x:Name="VolCh1" Margin="191,384,937,112" CustomValueChanged="RecCh1_CustomVolumeChange"/>
+        <localCC:ChannelVolumeSlider x:Name="VolCh2" Margin="348,385,764,113" CustomValueChanged="RecCh2_CustomVolumeChange"/>
+        <localCC:ChannelVolumeSlider x:Name="VolCh3" Margin="513,385,609,113" CustomValueChanged="RecCh3_CustomVolumeChange"/>
+        <localCC:ChannelVolumeSlider x:Name="VolCh4" Margin="688,385,442,113" CustomValueChanged="RecCh4_CustomVolumeChange"/>
+        <localCC:ChannelVolumeSlider x:Name="VolCh5" Margin="854,386,276,112" CustomValueChanged="RecCh5_CustomVolumeChange"/>
+        <localCC:ChannelVolumeSlider x:Name="VolDrum" Margin="1022,385,111,113" CustomValueChanged="Drum_CustomVolumeChange"/>
+
+        <localCC:EditBtn x:Name="EditCh1" HorizontalAlignment="Left" Margin="120,420,0,0" VerticalAlignment="Top" Height="40" Width="40" CustomEditClick="EditCh1_CustomEditClick"/>
+        <localCC:EditBtn x:Name="EditCh2" HorizontalAlignment="Left" Margin="285,420,0,0" VerticalAlignment="Top" Height="40" Width="40" CustomEditClick="EditCh2_CustomEditClick"/>
+        <localCC:EditBtn x:Name="EditCh3" HorizontalAlignment="Left" Margin="448,420,0,0" VerticalAlignment="Top" Height="40" Width="40" CustomEditClick="EditCh3_CustomEditClick"/>
+        <localCC:EditBtn x:Name="EditCh4" HorizontalAlignment="Left" Margin="615,420,0,0" VerticalAlignment="Top" Height="40" Width="40" CustomEditClick="EditCh4_CustomEditClick"/>
+        <localCC:EditBtn x:Name="EditCh5" HorizontalAlignment="Left" Margin="780,420,0,0" VerticalAlignment="Top" Height="40" Width="40" CustomEditClick="EditCh5_CustomEditClick"/>
+
+        <localCC:UniversalBtn x:Name="ClearCh1" ToolTip="Clear Channel" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="170,420,0,0" CustomClick="ClearCh1_Click" />
+        <localCC:UniversalBtn x:Name="ClearCh2" ToolTip="Clear Channel" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="335,420,0,0" CustomClick="ClearCh2_Click" />
+        <localCC:UniversalBtn x:Name="ClearCh3" ToolTip="Clear Channel" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="498,420,0,0" CustomClick="ClearCh3_Click" />
+        <localCC:UniversalBtn x:Name="ClearCh4" ToolTip="Clear Channel" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="665,420,0,0" CustomClick="ClearCh4_Click" />
+        <localCC:UniversalBtn x:Name="ClearCh5" ToolTip="Clear Channel" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="830,420,0,0" CustomClick="ClearCh5_Click" />
+
+        <localCC:UniversalBtn x:Name="SaveCh1" ToolTip="Save" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="170,440,0,0" CustomClick="SaveCh1_Click"/>
+        <localCC:UniversalBtn x:Name="SaveCh2" ToolTip="Save" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="335,440,0,0" CustomClick="SaveCh2_Click"/>
+        <localCC:UniversalBtn x:Name="SaveCh3" ToolTip="Save" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="498,440,0,0" CustomClick="SaveCh3_Click"/>
+        <localCC:UniversalBtn x:Name="SaveCh4" ToolTip="Save" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="665,440,0,0" CustomClick="SaveCh4_Click"/>
+        <localCC:UniversalBtn x:Name="SaveCh5" ToolTip="Save" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="830,440,0,0" CustomClick="SaveCh5_Click"/>
+
+        <localCC:Poti x:Name="Poti_OutputLevel" HorizontalAlignment="Left" Margin="615,38,0,0" VerticalAlignment="Top" Height="50" Width="50" CustomPotiClick="OutputLevel_ValueChange"/>
+
+        <localCC:AllStartStopBtn x:Name="AllStartStop" HorizontalAlignment="Left" Margin="620,132,0,0" VerticalAlignment="Top" Height="40" Width="40" CustomPlayAllClick="ClickPlayAll"/>
+
+        <Image Source ="/Pics/Display.png" HorizontalAlignment="Left" Height="173" Margin="109,38,0,0" VerticalAlignment="Top" Width="355" Stretch="Fill"/>
+
+        <ContentControl >
+            <ContentControl x:Name="InputController" Content="{Binding CurrentView}" HorizontalAlignment="Left" Margin="120,44,0,0" VerticalAlignment="Top" Height="158" Width="334"/>
+        </ContentControl>
+
+        <localSC:Controller x:Name="SerialController" Margin="120,44,0,0" Height="158" Width="334" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top">
+        </localSC:Controller>
+
+        <localCC:SaveOutput x:Name="OutputRecorder"  Margin="120,44,0,0" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top">
+        </localCC:SaveOutput>
+
+        <AVR:SaveView x:Name="AVR" Margin="120,44,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden"/>
+
+        <localCC:Cutter x:Name="Cutter"  Margin="120,44,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden" >
+        </localCC:Cutter>
+
+        <localCC:Chords x:Name="Chords"  Margin="750,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Hidden" >
+        </localCC:Chords>
+        
+        <Button HorizontalAlignment="Left" Margin="486,125,0,0" VerticalAlignment="Top" Width="75" Click="ButtonVoiceRec_Click" Visibility="Hidden">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/ButtonVR.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Width="60"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="AVRButton" HorizontalAlignment="Left" Margin="486,67,0,0" VerticalAlignment="Top" Width="90" Click="ButtonAVR_Click">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/ButtonAVR.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Width="60"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Image Source="/Pics/System.png" Width="50" Height="20" Margin="980,25,29.667,543.334"/>
+        <localCC:UnvisibleButton HorizontalAlignment="Left" Margin="1070,34,0,0" VerticalAlignment="Top" Height="20" Width="21" Custom_Unvisible_Button_Click="Button_Close_Click"/>
+        <localCC:UnvisibleButton HorizontalAlignment="Left" Margin="1060,34,0,0" VerticalAlignment="Top" Height="20" Width="10" Custom_Unvisible_Button_Click="Button_Minimize_Click"/>
+        <localCC:UnvisibleButton HorizontalAlignment="Left" Margin="1035,34,0,0" VerticalAlignment="Top" Height="20" Width="21" Custom_Unvisible_Button_Click="Button_About_Click"/>
+
+
+        <Button x:Name="Btn_Ch1_Aktiv"  HorizontalAlignment="Left" Margin="120,385,0,0" VerticalAlignment="Top" Width="20" Click="Click_Ch1_Aktiv">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/Ch1_green.png"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="24"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="Btn_Ch2_Aktiv"  HorizontalAlignment="Left" Margin="284,385,0,0" VerticalAlignment="Top" Width="22" Click="Click_Ch2_Aktiv">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/Ch2_green.png"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="24"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="Btn_Ch3_Aktiv"  HorizontalAlignment="Left" Margin="453,385,0,0" VerticalAlignment="Top" Width="22" Click="Click_Ch3_Aktiv" Visibility="{Binding IsTrialVersion}">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/Ch3_green.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="24"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="Btn_Ch4_Aktiv"  HorizontalAlignment="Left" Margin="611,385,0,0" VerticalAlignment="Top" Width="23" Click="Click_Ch4_Aktiv" Visibility="{Binding IsTrialVersion}">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/Ch4_green.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="24"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="Btn_Ch5_Aktiv"  HorizontalAlignment="Left" Margin="775,385,0,0" VerticalAlignment="Top" Width="23" Click="Click_Ch5_Aktiv" Visibility="{Binding IsTrialVersion}">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/Ch5_green.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="24"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="Btn_ChD_Aktiv"  HorizontalAlignment="Left" Margin="946,383,0,0" VerticalAlignment="Top" Width="23" Click="Click_ChD_Aktiv"  Visibility="{Binding IsTrialVersion}">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/ChD_green.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="24"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="Rec"  HorizontalAlignment="Left" Margin="486,67,0,0" VerticalAlignment="Top" Click="ClickRec" Width="75" Visibility="Hidden">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/ButtonOR.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Width="60"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="Controller"  HorizontalAlignment="Left" Margin="486,38,0,0" VerticalAlignment="Top" Click="ClickController" Width="90" >
+            <Button.Background>
+                <ImageBrush ImageSource ="Pics/Settings.png"  />
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Width="60"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <localCC:Loaded x:Name="LoadedCh1" HorizontalAlignment="Left" Margin="134,558,0,0" VerticalAlignment="Top" Height="20" Width="20"/>
+        <localCC:Loaded x:Name="LoadedCh2" HorizontalAlignment="Left" Margin="299,558,0,0" VerticalAlignment="Top" Height="20" Width="20"/>
+        <localCC:Loaded x:Name="LoadedCh3" HorizontalAlignment="Left" Margin="464,558,0,0" VerticalAlignment="Top" Height="20" Width="20" Visibility="{Binding IsTrialVersion}"/>
+        <localCC:Loaded x:Name="LoadedCh4" HorizontalAlignment="Left" Margin="629,558,0,0" VerticalAlignment="Top" Height="20" Width="20" Visibility="{Binding IsTrialVersion}"/>
+        <localCC:Loaded x:Name="LoadedCh5" HorizontalAlignment="Left" Margin="794,558,0,0" VerticalAlignment="Top" Height="20" Width="20" Visibility="{Binding IsTrialVersion}"/>
+        <Button x:Name="CutterBtn"  HorizontalAlignment="Left" Margin="486,96,0,0" VerticalAlignment="Top" Click="CutterBtn_Click" Width="90" >
+            <Button.Background>
+                <ImageBrush ImageSource ="/Pics/ButtonCutter.png"  ></ImageBrush>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Width="60"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+    </Grid>
+</Window>

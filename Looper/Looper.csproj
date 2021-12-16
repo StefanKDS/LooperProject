@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17232157-056B-48D5-9C2B-60BC28E29E65}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Looper</RootNamespace>
+    <AssemblyName>Looper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.0.1, Culture=neutral, PublicKeyToken=d9452de2c18e9148, processorArchitecture=MSIL">
+      <HintPath>..\packages\Uno.GalaSoft.MvvmLight.5.4.0-uno.134\lib\netstandard2.0\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Uno.GalaSoft.MvvmLight.Platform.5.4.0-uno.134\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>.\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>VoiceRecorder.Core\bin\Debug\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VoiceRecorder.Audio">
+      <HintPath>VoiceRecorder.Audio\bin\Debug\VoiceRecorder.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="VoiceRecorder.Core">
+      <HintPath>VoiceRecorder.Core\bin\Debug\VoiceRecorder.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="About\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioRecorder\Audio.cs" />
+    <Compile Include="AudioRecorder\AutoTuneView.xaml.cs">
+      <DependentUpon>AutoTuneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioRecorder\AutoTuneViewModel.cs" />
+    <Compile Include="AudioRecorder\MainWindowViewModel.cs" />
+    <Compile Include="AudioRecorder\RecorderView.xaml.cs" />
+    <Compile Include="AudioRecorder\RecorderViewModel.cs" />
+    <Compile Include="CustomControls\AutoTune.xaml.cs">
+      <DependentUpon>AutoTune.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Chords.xaml.cs">
+      <DependentUpon>Chords.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Cutter.xaml.cs">
+      <DependentUpon>Cutter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\EditBtn.xaml.cs">
+      <DependentUpon>EditBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Loaded.xaml.cs">
+      <DependentUpon>Loaded.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\SaveOutput.xaml.cs">
+      <DependentUpon>SaveOutput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioRecorder\SaveView.xaml.cs" />
+    <Compile Include="AudioRecorder\SaveViewModel.cs" />
+    <Compile Include="AudioRecorder\Scales.cs" />
+    <Compile Include="AudioRecorder\ShuttingDownMessage.cs" />
+    <Compile Include="AudioRecorder\VoiceRecorderState.cs" />
+    <Compile Include="AudioRecorder\WelcomeView.xaml.cs" />
+    <Compile Include="AudioRecorder\WelcomeViewModel.cs" />
+    <Compile Include="FourierTransform.cs" />
+    <Compile Include="SerialController\Controller.xaml.cs">
+      <DependentUpon>Controller.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SerialController\SerialController.cs" />
+    <Page Include="About\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AudioRecorder\AutoTuneView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\AutoTune.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\Chords.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\Cutter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\EditBtn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\Loaded.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SerialController\Controller.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\SaveOutput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\AllStartStopBtn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\UniversalBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Poti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ProgressCycle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\RecButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ChannelVolumeSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\UnvisibleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Channel.cs" />
+    <Compile Include="CustomControls\AllStartStopBtn.xaml.cs">
+      <DependentUpon>AllStartStopBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\UniversalBtn.xaml.cs">
+      <DependentUpon>UniversalBtn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Poti.xaml.cs">
+      <DependentUpon>Poti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ProgressCycle.xaml.cs">
+      <DependentUpon>ProgressCycle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\RecButton.xaml.cs">
+      <DependentUpon>RecButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ChannelVolumeSlider.xaml.cs">
+      <DependentUpon>ChannelVolumeSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\UnvisibleButton.xaml.cs">
+      <DependentUpon>UnvisibleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioRecorder\IView.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="AudioRecorder\RecorderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AudioRecorder\SaveView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AudioRecorder\WelcomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioRecorder\NoteViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Thum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconshock-Dj-Mixing-desk.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonContinue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonApply.png" />
+    <Resource Include="Pics\ButtonCancel.png" />
+    <Resource Include="Pics\ButtonSelectAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonAutoTune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonPlay.png" />
+    <Resource Include="Pics\ButtonStop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonRec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonVR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\System.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\GreenLED.png" />
+    <Resource Include="Pics\RedLED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Ch1_green.png" />
+    <Resource Include="Pics\Ch1_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Ch2_green.png" />
+    <Resource Include="Pics\Ch2_red.png" />
+    <Resource Include="Pics\Ch3_green.png" />
+    <Resource Include="Pics\Ch3_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Ch4_green.png" />
+    <Resource Include="Pics\Ch4_red.png" />
+    <Resource Include="Pics\Ch5_green.png" />
+    <Resource Include="Pics\Ch5_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ChD_green.png" />
+    <Resource Include="Pics\ChD_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonOR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Poti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Button_green.png" />
+    <Resource Include="Pics\Button_red.png" />
+    <Resource Include="Pics\Button_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\WhiteLED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Looper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonCutter.png" />
+    <Resource Include="Pics\ButtonLoad.png" />
+    <Resource Include="Pics\ButtonSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\ButtonAVR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="About\Lizenzen\NAudio.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Infinity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

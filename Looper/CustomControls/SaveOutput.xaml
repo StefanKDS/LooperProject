@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Looper.CustomControls.SaveOutput"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Looper.CustomControls"
+             mc:Ignorable="d" Height="122.67" Width="201.483">
+    <Grid>
+        <Button Margin="9,73,0,0" x:Name="RecButton" ToolTip="Start Recording" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Click="Button_RecClick">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Looper;component/Pics/ButtonRec.png"  />
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Margin="49,73,0,0" x:Name="StopButton" ToolTip="Stop Recording" Height="29" VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Click="Button_StopClick">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Looper;component/Pics/ButtonStop.png"  />
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label Content="Record Output" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="LightGray" FontFamily="Arial Black" FontSize="16"/>
+        <Label x:Name="RecStatus"  Content="- Recording stopped -" HorizontalAlignment="Left" Margin="0,33,0,0" VerticalAlignment="Top" Foreground="Green" FontFamily="Arial Black" FontSize="13"/>
+        <Button Margin="91,73,10,22" Click="Button_SaveClick">
+            <Button.Background>
+                <ImageBrush ImageSource ="/Looper;component/Pics/ButtonSave.png"  />
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="60"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+    </Grid>
+</UserControl>

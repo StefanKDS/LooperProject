@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+  android:background = "#000000">
+	<LinearLayout
+      android:orientation=    "horizontal"
+      android:layout_width=    "fill_parent"
+      android:layout_height=    "fill_parent"
+      android:layout_weight=    "1.4"    
+	  android:background = "#000000">
+		<Button
+			android:id=              "@+id/Setlist"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Open Setlist" 
+		    android:textColor="#000000"
+		    android:textSize="12sp"
+		    android:layout_marginLeft="27sp"
+		    android:onClick= "Setlist"
+		    android:background = "#25b027"
+		    android:layout_marginTop ="10sp"
+			android:padding="15px"/>
+
+		<Button
+			android:id=              "@+id/SaveSetlist"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Save as Setlist" 
+		    android:textColor="#000000"
+		    android:textSize="12sp"
+		    android:layout_marginLeft="27sp"
+		    android:onClick= "SaveAsSetlist"
+		    android:background = "#25b027"
+		    android:layout_marginTop ="10sp"
+			android:padding="15px"/>
+		
+		<Button
+			android:id=              "@+id/CheckSync"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Sync" 
+		    android:textColor="#000000"
+		    android:textSize="12sp"
+		    android:layout_marginLeft="27sp"
+		    android:onClick= "Sync"
+		    android:background = "#25b027"
+		    android:layout_marginTop ="10sp"
+			android:visibility="gone"/>
+
+		<LooperApp.MultiSelectSpinner
+			android:id="@+id/syncChannels"
+			android:gravity=       "center"
+			android:layout_width="200sp"
+			android:layout_height="48sp" 
+			android:textColor="#000000"
+			android:background = "#25b027"
+			android:layout_marginLeft="5sp"
+			android:layout_marginTop ="10sp"
+			android:visibility="gone"/>
+
+		<Button
+			android:id=              "@+id/Remote"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Remote" 
+		    android:textColor="#000000"
+		    android:textSize="12sp"
+		    android:layout_marginLeft="27sp"
+		    android:onClick= "ReactOnRemote"
+		    android:background = "#b02525"
+		    android:layout_marginTop ="10sp"
+			android:padding="15px"/>
+
+		<Button
+			android:id=              "@+id/AutoNext"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="AutoNext" 
+		    android:textColor="#000000"
+		    android:textSize="12sp"
+		    android:layout_marginLeft="27sp"
+		    android:onClick= "ReactOnAutoNext"
+		    android:background = "#b02525"
+		    android:layout_marginTop ="10sp"
+			android:padding="15px"/>
+
+		<Button
+			android:id=              "@+id/Applaus"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Applaus" 
+		    android:textColor="#000000"
+		    android:textSize="12sp"
+		    android:layout_marginLeft="27sp"
+		    android:onClick= "ReactOnApplaus"
+		    android:background = "#25b027"
+		    android:layout_marginTop ="10sp"
+			android:padding="15px"/>
+	</LinearLayout>
+
+	<LinearLayout
+      android:orientation=    "horizontal"
+      android:layout_width=    "fill_parent"
+      android:layout_height=    "fill_parent"
+      android:layout_weight=    "1">
+
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+				android:id=             "@+id/Ch1Text"
+				android:gravity=       "center"
+				android:layout_width=  "fill_parent"
+				android:layout_height= "fill_parent"
+				android:layout_weight= "1"   
+				android:layout_marginLeft = "10px"
+				android:layout_marginRight = "10px"
+			    android:textColor="#FFFFFF"
+				android:text="---"/>
+			</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch1"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch1_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume1"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+	  
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+					     android:id=             "@+id/Ch2Text"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+					android:layout_marginLeft = "10px"
+					     android:layout_marginRight = "10px"
+			             android:textColor="#FFFFFF"
+				         android:text="---"/>
+				</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch2"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch2_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume2"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+					     android:id=             "@+id/Ch3Text"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+					android:layout_marginLeft = "10px"
+					     android:layout_marginRight = "10px"
+			             android:textColor="#FFFFFF"
+				         android:text="---"/>
+				</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch3"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch3_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume3"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+					     android:id=             "@+id/Ch4Text"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+					android:layout_marginLeft = "10px"
+					     android:layout_marginRight = "10px"
+			             android:textColor="#FFFFFF"
+				         android:text="---"/>
+				</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch4"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch4_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume4"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+		<LinearLayout
+      android:orientation=    "horizontal"
+      android:layout_width=    "fill_parent"
+      android:layout_height=    "fill_parent"
+      android:layout_weight=    "1">
+
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+					     android:id=             "@+id/Ch5Text"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+					android:layout_marginLeft = "10px"
+					     android:layout_marginRight = "10px"
+			             android:textColor="#FFFFFF"
+				         android:text="---"/>
+				</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch5"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch5_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume5"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+	  
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+					     android:id=             "@+id/Ch6Text"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+					android:layout_marginLeft = "10px"
+					     android:layout_marginRight = "10px"
+			             android:textColor="#FFFFFF"
+				         android:text="---"/>
+				</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch6"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch6_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume6"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+					     android:id=             "@+id/Ch7Text"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+					android:layout_marginLeft = "10px"
+					     android:layout_marginRight = "10px"
+			             android:textColor="#FFFFFF"
+				         android:text="---"/>
+				</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch7"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch7_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume7"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+		<LinearLayout
+         android:orientation=    "vertical"
+         android:layout_width=    "fill_parent"
+         android:layout_height=    "fill_parent"
+         android:layout_weight=    "1">
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<TextView
+					     android:id=             "@+id/Ch8Text"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+					android:layout_marginLeft = "10px"
+					     android:layout_marginRight = "10px"
+			             android:textColor="#FFFFFF"
+				         android:text="---"/>
+				</LinearLayout>
+
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "1">
+				<LinearLayout
+                  android:orientation=    "horizontal"
+                  android:layout_width=    "fill_parent"
+                  android:layout_height=    "fill_parent"
+		  	      android:gravity=       "center"
+                  android:layout_weight=    "1">
+					<LinearLayout
+                      android:orientation=    "vertical"
+                      android:layout_width=    "fill_parent"
+                      android:layout_height=    "fill_parent"
+		  	          android:gravity=       "center"
+                      android:layout_weight=    "1">
+			          <ImageView
+			          		     android:id=              "@+id/Ch8"
+			          		     android:gravity=       "center"
+			          		     android:layout_width=  "fill_parent"
+			          		     android:layout_height= "fill_parent"
+			          		     android:layout_weight= "1"    
+			          	         android:src=           "@drawable/red_rect"
+			          	         android:clickable=     "true"
+			          		     android:onClick=       "BtnClick"
+			                      android:background = "#000000"
+			          	         />
+						</LinearLayout>
+					<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+		  	 android:gravity=       "center"
+             android:layout_weight=    "2">
+			<ImageView
+					     android:id=              "@+id/Ch8_Loop"
+					     android:gravity=       "center"
+					     android:layout_width=  "fill_parent"
+					     android:layout_height= "fill_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/red_rect_L"
+				         android:clickable=     "true"
+					     android:onClick=       "BtnClickLoop"
+			             android:background = "#000000"
+				         />
+	
+						</LinearLayout>
+				</LinearLayout>
+				</LinearLayout>
+			<LinearLayout
+             android:orientation=    "vertical"
+             android:layout_width=    "fill_parent"
+             android:layout_height=    "fill_parent"
+             android:layout_weight=    "1.5">
+			<SeekBar
+                        android:id=              "@+id/Volume8"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:max=            "100"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				</LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation=    "vertical"
+    android:layout_width=   "match_parent"
+    android:layout_height=  "match_parent"
+    android:background=		"@drawable/Looper">
+        
+	<LinearLayout
+		android:orientation=    "horizontal"
+		android:layout_width=   "match_parent"
+		android:layout_height=  "1px"
+		android:layout_weight=  "0.65">
+
+		<!-- Oben -->
+		<LinearLayout
+			android:orientation=     "horizontal"
+			android:layout_width=    "match_parent"
+			android:layout_height=   "match_parent"
+			android:layout_weight=   "1"    >
+
+				<!-- 1.1  Monitor -->
+				<LinearLayout
+					android:orientation=    "vertical"
+					android:layout_height=  "match_parent"
+					android:layout_width=   "1px"
+					android:layout_weight=  "1.5"    >
+						<TextView
+							android:gravity=        "center_horizontal"
+							android:layout_width=   "match_parent"
+							android:layout_height=  "1px"
+							android:layout_weight=  "0.15"    />
+				<LinearLayout
+					android:orientation=    "horizontal"
+					android:layout_height=  "match_parent"
+					android:layout_width=   "match_parent"
+					android:layout_weight=  "1.5"    >
+
+                    <SeekBar
+                        android:id=              "@+id/ChannelSpeed"
+                        android:gravity=		 "center_horizontal"
+                        android:layout_width=   "match_parent"
+                        android:layout_height=  "match_parent"
+                        android:layout_weight=  "1"
+                        android:layout_marginBottom=   "5sp"
+                        android:layout_marginTop=   "20sp"
+                        android:layout_marginLeft=   "20sp"
+                        android:layout_marginRight=  "5dp"
+                        android:max=            "200"
+                        android:thumb =          "@drawable/Thumb2"
+                        android:tickMark="@android:color/white"/>
+				<ImageView
+					     android:id=              "@+id/ResetSpeed"
+					     android:gravity=      "center_vertical"
+					     android:layout_width=  "80sp"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+						android:layout_marginTop =  "15sp"
+						android:layout_marginRight=  "5dp"
+				         android:src=           "@drawable/Button_150_S"
+				         android:clickable=     "true"
+					     android:onClick=       "ResetSpeed"
+				         />
+					</LinearLayout>
+					    <LinearLayout
+					android:orientation=    "horizontal"
+					android:layout_height=  "match_parent"
+					android:layout_width=   "match_parent"
+					android:layout_weight=  "1.5"    >
+						<SeekBar
+					     android:id=              "@+id/ChannelPitch"
+					     android:gravity=		 "center_horizontal"
+					     android:layout_width=   "match_parent"
+					     android:layout_height=  "match_parent"
+					     android:layout_marginBottom=   "20sp"
+					     android:layout_marginTop=   "5sp"
+					     android:layout_marginLeft=   "20sp"
+					     android:layout_marginRight=  "5sp"
+					     android:layout_weight=  "1"    
+					     android:max=            "200"
+				         android:thumb =          "@drawable/Thumb2"
+				         android:tickMark="@android:color/white"/>
+					<ImageView
+					     android:id=              "@+id/ResetPitch"
+					     android:gravity=      "center_vertical"
+					     android:layout_width=  "80sp"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+						 android:layout_marginTop = "-15sp"
+						 android:layout_marginRight=  "5dp"
+				         android:src=           "@drawable/Button_150_P"
+				         android:clickable=     "true"
+					     android:onClick=       "ResetPitch"
+				         />
+						 
+
+					</LinearLayout>
+				</LinearLayout>
+
+			<LinearLayout
+					android:orientation=    "vertical"
+					android:layout_height=  "match_parent"
+					android:layout_width=   "1px"
+					android:layout_weight=  "0.3"    >
+					
+					<!-- 1.2 Abstand oben -->
+					<TextView
+					     android:gravity=       "center_horizontal"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    />
+					
+					<!-- 1.3 Button -->
+					<ImageView
+					     android:id=              "@+id/Sel1"
+					     android:gravity=       "center"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/Button_150_1_svg"
+				         android:clickable=     "true"
+					     android:onClick=       "ChangeChannel"
+				         />
+					
+					<!-- 1.4 Button 2-->
+					<ImageView
+					     android:id=              "@+id/Sel2"
+					     android:gravity=       "center"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/Button_150_2_svg"
+				         android:clickable=     "true"
+					     android:onClick=       "ChangeChannel"
+				         />
+					
+					<!-- 1.5 Button 3-->
+					<ImageView
+					     android:id=              "@+id/Sel3"
+					     android:gravity=       "center"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/Button_150_3_svg"
+				         android:clickable=     "true"
+					     android:onClick=       "ChangeChannel"
+				         />
+					
+					<!-- 1.6 Abstand unten-->
+					<TextView
+					     android:gravity=        "center_horizontal"
+					     android:layout_width=   "match_parent"
+					     android:layout_height=  "match_parent"
+					     android:layout_weight=  "1"    />
+				</LinearLayout>
+			<LinearLayout
+					android:orientation=    "vertical"
+					android:layout_height=  "match_parent"
+					android:layout_width=   "1px"
+					android:layout_weight=  "0.3"    >
+					
+					<!-- 1.2 Abstand oben -->
+					<TextView
+					     android:gravity=       "center_horizontal"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+ />
+					
+					<!-- 1.3 Button Remote-->
+					<ImageView
+					     android:id=              "@+id/Sel4"
+					     android:gravity=       "center"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/Button_150_4_svg"
+				         android:clickable=     "true"
+					     android:onClick=       "ChangeChannel"
+				         />
+					
+					<!-- 1.4 Button 2-->
+					<ImageView
+					     android:id=              "@+id/Sel5"
+					     android:gravity=       "center"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/Button_150_5_svg"
+				         android:clickable=     "true"
+					     android:onClick=       "ChangeChannel"
+				         />
+					
+					<!-- 1.5 Button 3-->
+					<ImageView
+					     android:id=              "@+id/Sel6"
+					     android:gravity=       "center"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    
+				         android:src=           "@drawable/Button_150_D_svg"
+				         android:clickable=     "true"
+					     android:onClick=       "ChangeChannel"
+				         />
+					
+					<!-- 1.6 Abstand unten-->
+					<TextView
+					     android:gravity=        "center_horizontal"
+					     android:layout_width=   "match_parent"
+					     android:layout_height=  "match_parent"
+					     android:layout_weight=  "1"    />
+				</LinearLayout>
+
+				<!--ButtonArea oben -->   
+				<LinearLayout
+					android:orientation=    "vertical"
+					android:layout_height=  "match_parent"
+					android:layout_width=   "1px"
+					android:layout_weight=  "0.5"    >
+					
+					<!-- 1.2 Abstand oben -->
+					<TextView
+					     android:gravity=       "center_horizontal"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "0.85"    />
+					
+					<!-- 1.3 Button Remote-->
+				<ImageView  
+						 android:id=                  "@+id/buttonSampler"
+						 android:gravity=             "center_horizontal"
+						 android:layout_width=        "match_parent"
+						 android:layout_height=       "match_parent"
+						 android:visibility=          "visible"
+						 android:layout_weight=       "0.85"  
+					     android:clickable=           "true"
+					     android:onClick=             "StartSampler"
+						 android:background=          "@drawable/Button_Sampler_svg"/>
+				<TextView
+					     android:gravity=       "center_horizontal"
+					     android:layout_width=  "match_parent"
+					     android:layout_height= "match_parent"
+					     android:layout_weight= "1"    />
+
+                <LinearLayout
+                    android:orientation=    "horizontal"
+                    android:layout_height = "match_parent"
+                    android:layout_width = "match_parent"
+                    android:layout_weight=    "0.7"
+                    android:minWidth="25px"
+                    android:minHeight="25px">
+
+                    <!-- 1.4 Button 2-->
+                </LinearLayout>
+					
+					<!-- 1.6 Abstand unten-->
+					<TextView
+					     android:gravity=        "center_horizontal"
+					     android:layout_width=   "match_parent"
+					     android:layout_height=  "match_parent"
+					     android:layout_weight=  "0.8"    />
+				</LinearLayout>
+
+
+				 <!-- Button / Regler Area -->
+				 <LinearLayout
+					 android:orientation=    "vertical"
+					 android:layout_height = "match_parent"
+					 android:layout_width=    "1px"
+					 android:layout_weight=    "0.5"    >
+				
+					<!-- Abstand oben --> 
+					<TextView
+					     android:gravity=        "center_horizontal"
+					     android:layout_width=   "match_parent"
+					     android:layout_height=  "match_parent"
+					     android:layout_weight=  "0.8"    />
+				<LinearLayout
+					 android:orientation=    "horizontal"
+					 android:layout_height = "match_parent"
+					android:layout_width = "match_parent"
+					 android:layout_weight=    "0.7"    >
+					<!-- 1.7 Volume --> 
+				    <ImageView
+						 android:id=               "@+id/playAll"
+					     android:gravity=          "center_horizontal"
+					     android:src=              "@drawable/Button_Play_White_svg"
+					     android:layout_width=     "match_parent"
+					     android:layout_height=    "match_parent"
+					     android:layout_weight=    "0.7"   
+				         android:clickable=        "true"
+				         android:onClick=          "Playall"/>
+
+					<ImageView					
+						 android:id=               "@+id/openSetlist"
+					     android:gravity=         "center_horizontal"
+					     android:src=              "@drawable/Button_Open_Setlist_svg"
+					     android:layout_width=    "match_parent"
+					     android:layout_height=   "match_parent"
+					     android:layout_weight=   "0.7"
+						 android:clickable=        "true"
+				         android:onClick=          "Setlist"/>
+
+					</LinearLayout>
+					
+					 <!-- Abstand mitte -->
+					 <TextView
+					     android:gravity=          "center_horizontal"
+					     android:layout_width=     "match_parent"
+					     android:layout_height=    "match_parent"
+					     android:layout_weight=    "0.8"    />
+				 <LinearLayout
+					 android:orientation=    "horizontal"
+					 android:layout_height = "match_parent"
+					android:layout_width = "match_parent"
+					 android:layout_weight=    "0.7"    >
+
+					<!-- 1.8 Save-->  
+					<ImageView					
+						 android:id=               "@+id/saveChannel"
+					     android:gravity=         "center_horizontal"
+					     android:src=              "@drawable/Button_Disk_Channel_svg"
+					     android:layout_width=    "match_parent"
+					     android:layout_height=   "match_parent"
+					     android:layout_weight=   "0.7"
+						 android:clickable=        "true"
+				         android:onClick=          "SaveChannel"/>
+
+					<ImageView					
+						 android:id=               "@+id/saveSetlist"
+					     android:gravity=         "center_horizontal"
+					     android:src=              "@drawable/Button_Disk_Setlist_svg"
+					     android:layout_width=    "match_parent"
+					     android:layout_height=   "match_parent"
+					     android:layout_weight=   "0.7"
+						 android:clickable=        "true"
+				         android:onClick=          "SaveSetlist"/>
+
+					</LinearLayout>
+
+
+					 <!-- Abstand unten --> 
+					 <TextView
+					     android:gravity=           "center_horizontal"
+					     android:layout_width=      "match_parent"
+					     android:layout_height=     "match_parent"
+					     android:layout_weight=     "0.8"    />
+				 </LinearLayout>
+			<TextView
+					 android:id=             "@+id/TempText"
+				     android:gravity=        "center_horizontal"				 
+				     android:layout_width=   "wrap_content"
+				     android:layout_height=  "match_parent"
+				     android:layout_weight=  "0.2" 
+				     android:onClick=        "ShowVersion"/>
+			</LinearLayout>
+		</LinearLayout>
+
+		<!-- Unten -->
+		  <LinearLayout
+				android:orientation=    "horizontal"
+				android:layout_width=   "match_parent"
+				android:layout_height=  "1px"
+				android:layout_weight=  "1"    >
+
+				<!-- 2.1 Rand-->  
+				<TextView
+				    android:gravity=         "center_horizontal"
+				    android:layout_height=   "match_parent"
+				    android:layout_width=    "1px"
+				    android:layout_weight=   "0.21"    />
+
+				<!-- CH1 -->
+				<LinearLayout
+				    android:orientation=    "vertical"
+				    android:layout_height=  "match_parent"
+				    android:layout_width=   "1px"
+				    android:layout_weight=    "0.85"    >
+				  
+					<!-- 2.2 Progress-->
+					<ProgressBar
+					 android:id="@+id/progressBarCh1"
+					 style="?android:attr/progressBarStyleHorizontal"
+				     android:gravity=       "center_horizontal"
+					 android:layout_width=  "match_parent"
+				     android:layout_height= "1px"
+					 android:layout_weight= "0.9" 
+				     android:layout_marginBottom=  "20px"
+					 android:layout_marginLeft=    "20px"
+				     android:layout_marginRight=   "20px"
+				     android:layout_marginTop=     "5px"
+					 android:layout_alignParentTop="true"
+					 android:background="@drawable/circle_shape"
+					 android:indeterminate="false"
+					 android:max="100"
+					 android:progress="65"
+					 android:progressDrawable="@drawable/circular_progress_bar" 
+			         android:clickable=       "true"
+				     android:onClick=         "Getfile"/>	    
+		
+					<!-- 2.3 -->
+					<LinearLayout
+						android:orientation=    "horizontal"
+						android:layout_width=   "match_parent"
+						android:layout_height=  "1px"
+						android:layout_weight=  "0.6"     >
+
+						<LinearLayout
+							android:orientation=    "vertical"
+							android:layout_height=  "match_parent"
+							android:layout_width=   "1px"
+							android:layout_weight=  "0.8"    >
+
+					        <!-- CH1 Number -->
+							<ImageView
+						         android:id=            "@+id/CH1_Number"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1.3"    
+								 android:src=           "@drawable/Ch1_green"/>
+
+							<!-- Abstand -->
+							<TextView
+								android:gravity=        "center_horizontal"   
+				                android:layout_width=   "match_parent"
+				                android:layout_height=  "match_parent"
+				                android:layout_weight=  "1.5"    />
+
+							 <!-- CH1 Edit -->
+							 <ImageButton  
+						         android:id=                   "@+id/CH1_Edit"
+							     android:gravity=              "center_horizontal"
+							     android:layout_width=         "match_parent"
+							     android:layout_height=        "match_parent"
+								 android:layout_marginBottom=  "5sp"
+						         android:layout_marginLeft=    "20px"
+				                 android:layout_marginRight=   "0sp"
+				                 android:layout_marginTop=     "0sp"
+							     android:layout_weight=        "0.6"    
+								 android:background=           "@drawable/Button_Rec_White_svg"
+						         android:clickable=       "true"
+						         android:onClick=         "Recordmode"/>
+							</LinearLayout>
+
+							<!-- CH1 Volume -->
+							<LooperApp.VerticalSeekbar
+							android:id=                  "@+id/CH1_Volume"
+							android:layout_height=       "match_parent" 
+					        android:layout_width=        "0px"
+							android:layout_marginLeft=   "12px"
+							android:layout_marginRight=  "12px"
+							android:layout_weight=       "0.9"
+					        android:paddingLeft=         "2dp"
+	                        android:paddingRight=        "2dp"
+					        android:thumb =              "@drawable/Thumb2"
+					android:tickMark="@android:color/white"
+			 	            />
+
+					    </LinearLayout>
+
+				        <!-- 2.4 Rec/Play Button -->
+						<ImageView
+							android:id=              "@+id/CH1_Rec"
+							android:gravity=         "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.5" 
+				            android:clickable=       "true"
+						    android:onClick=         "Play"	
+							/>
+
+						<!-- 2.5 -->
+				        <LinearLayout
+							android:orientation=     "horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.15"     >
+							
+							<!-- Linke LED, Track geladen -->
+							<ImageView
+					             android:id=            "@+id/LoadedCh1"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1"    
+								 android:src=           "@drawable/WhiteLED"/>
+
+							<!-- Rechte LED -->
+							 <ImageView  
+					             android:id=            "@+id/PlayingCh1"
+							     android:gravity=    "center_horizontal"
+							     android:layout_width=    "match_parent"
+							     android:layout_height=    "match_parent"
+							     android:layout_weight=    "1"    
+								 android:src=         "@drawable/WhiteLED"/>
+						</LinearLayout>
+						
+					    <!-- Abstand unten -->
+						<ImageView
+							
+							android:gravity=    "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=    "1px"
+							android:layout_weight=    "0.1"    />
+				</LinearLayout>
+
+				<!-- CH2 -->
+				<LinearLayout
+				    android:orientation=    "vertical"
+				    android:layout_height=  "match_parent"
+				    android:layout_width=   "1px"
+				    android:layout_weight=    "0.85"    >
+				  
+					<!-- Progress-->
+				    <ProgressBar
+					 android:id="@+id/progressBarCh2"
+					 style="?android:attr/progressBarStyleHorizontal"
+				     android:gravity=       "center_horizontal"
+					 android:layout_width=  "match_parent"
+				     android:layout_height= "1px"
+					 android:layout_weight= "0.9" 
+				     android:layout_marginBottom=  "20px"
+					 android:layout_marginLeft=    "20px"
+				     android:layout_marginRight=   "20px"
+				     android:layout_marginTop=     "5px"
+					 android:layout_alignParentTop="true"
+					 android:background="@drawable/circle_shape"
+					 android:indeterminate="false"
+					 android:max="100"
+					 android:progress="65"
+				     android:clickable=       "true"
+				     android:onClick=         "Getfile"
+					 android:progressDrawable="@drawable/circular_progress_bar" />
+				  
+					<!-- 3.3 -->
+					<LinearLayout
+						android:orientation=    "horizontal"
+						android:layout_width=   "match_parent"
+						android:layout_height=  "1px"
+						android:layout_weight=  "0.6"     >
+
+						<LinearLayout
+							android:orientation=    "vertical"
+							android:layout_height=  "match_parent"
+							android:layout_width=   "1px"
+							android:layout_weight=  "0.8"    >
+
+					        <!-- CH2 Number -->
+							<ImageView
+						         android:id=            "@+id/CH2_Number"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1.3"    
+								 android:src=           "@drawable/Ch2_green"/>
+
+							<!-- Abstand -->
+							<TextView
+								android:gravity=        "center_horizontal"   
+				                android:layout_width=   "match_parent"
+				                android:layout_height=  "match_parent"
+				                android:layout_weight=  "1.5"    />
+
+							 <!-- CH2 Edit -->
+							 <ImageButton  
+						         android:id=                   "@+id/CH2_Edit"
+							     android:gravity=              "center_horizontal"
+							     android:layout_width=         "match_parent"
+							     android:layout_height=        "match_parent"
+								 android:layout_marginBottom=  "5sp"
+						         android:layout_marginLeft=    "20px"
+				                 android:layout_marginRight=   "0sp"
+				                 android:layout_marginTop=     "0sp"
+							     android:layout_weight=        "0.6"    
+								 android:background=           "@drawable/Button_Rec_White_svg"
+					android:clickable=       "true"
+						         android:onClick=         "Recordmode"/>
+							</LinearLayout>
+
+							<!-- CH2 Volume -->
+							<LooperApp.VerticalSeekbar
+							android:id=                  "@+id/CH2_Volume"
+							android:layout_height=       "match_parent" 
+					        android:layout_width=        "0px"
+							android:layout_marginLeft=   "12px"
+							android:layout_marginRight=  "12px"
+							android:layout_weight=       "0.9"
+					        android:paddingLeft=         "2dp"
+	                        android:paddingRight=        "2dp"
+					        android:thumb =              "@drawable/Thumb2"
+					android:tickMark="@android:color/white"
+			 	            />
+					    </LinearLayout>
+
+				        <!-- 3.4 Rec/Play Button -->
+						<ImageView
+							android:id=              "@+id/CH2_Rec"
+							android:gravity=         "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.5"    
+			                android:clickable=       "true"
+						    android:onClick=         "Play"
+							/>
+
+						<!-- 2.5 -->
+				        <LinearLayout
+							android:orientation=     "horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.15"     >
+							
+							<!-- Linke LED -->
+							<ImageView
+					             android:id=            "@+id/LoadedCh2"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1"    
+								 android:src=           "@drawable/WhiteLED"/>
+
+							<!-- Rechte LED -->
+							 <ImageView  
+					             android:id=            "@+id/PlayingCh2"
+							     android:gravity=    "center_horizontal"
+							     android:layout_width=    "match_parent"
+							     android:layout_height=    "match_parent"
+							     android:layout_weight=    "1"    
+								 android:src=         "@drawable/WhiteLED"/>
+						</LinearLayout>
+						
+					    <!-- Abstand unten -->
+						<ImageView
+							
+							android:gravity=    "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=    "1px"
+							android:layout_weight=    "0.1"    />
+				</LinearLayout>
+
+				<!-- CH3 -->
+				<LinearLayout
+				    android:orientation=    "vertical"
+				    android:layout_height=  "match_parent"
+				    android:layout_width=   "1px"
+				    android:layout_weight=    "0.85"    >
+				  
+					<!-- 4.2 Progress-->
+				    <ProgressBar
+					 android:id="@+id/progressBarCh3"
+					 style="?android:attr/progressBarStyleHorizontal"
+				     android:gravity=       "center_horizontal"
+					 android:layout_width=  "match_parent"
+				     android:layout_height= "1px"
+					 android:layout_weight= "0.9" 
+				     android:layout_marginBottom=  "20px"
+					 android:layout_marginLeft=    "20px"
+				     android:layout_marginRight=   "20px"
+				     android:layout_marginTop=     "5px"
+					 android:layout_alignParentTop="true"
+					 android:background="@drawable/circle_shape"
+					 android:indeterminate="false"
+					 android:max="100"
+					 android:progress="65"
+				     android:clickable=       "true"
+				     android:onClick=         "Getfile"
+					 android:progressDrawable="@drawable/circular_progress_bar" />
+				  
+					<!-- 4.3 -->
+					<LinearLayout
+						android:orientation=    "horizontal"
+						android:layout_width=   "match_parent"
+						android:layout_height=  "1px"
+						android:layout_weight=  "0.6"     >
+
+						<LinearLayout
+							android:orientation=    "vertical"
+							android:layout_height=  "match_parent"
+							android:layout_width=   "1px"
+							android:layout_weight=  "0.8"    >
+
+					        <!-- CH3 Number -->
+							<ImageView
+						         android:id=            "@+id/CH3_Number"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1.3"    
+								 android:src=           "@drawable/Ch3_green"/>
+
+							<!-- Abstand -->
+							<TextView
+								android:gravity=        "center_horizontal"   
+				                android:layout_width=   "match_parent"
+				                android:layout_height=  "match_parent"
+				                android:layout_weight=  "1.5"    />
+
+							 <!-- CH3 Edit -->
+							 <ImageButton  
+						         android:id=                   "@+id/CH3_Edit"
+							     android:gravity=              "center_horizontal"
+							     android:layout_width=         "match_parent"
+							     android:layout_height=        "match_parent"
+								 android:layout_marginBottom=  "5sp"
+						         android:layout_marginLeft=    "20px"
+				                 android:layout_marginRight=   "0sp"
+				                 android:layout_marginTop=     "0sp"
+							     android:layout_weight=        "0.6"    
+								 android:background=           "@drawable/Button_Rec_White_svg"
+					android:clickable=       "true"
+						         android:onClick=         "Recordmode"/>
+							</LinearLayout>
+
+							<!-- CH3 Volume -->
+							<LooperApp.VerticalSeekbar
+							android:id=                  "@+id/CH3_Volume"
+							android:layout_height=       "match_parent" 
+					        android:layout_width=        "0px"
+							android:layout_marginLeft=   "12px"
+							android:layout_marginRight=  "12px"
+							android:layout_weight=       "0.9"
+					        android:paddingLeft=         "2dp"
+	                        android:paddingRight=        "2dp"
+					        android:thumb =              "@drawable/Thumb2"
+					android:tickMark="@android:color/white"
+			 	            />
+					    </LinearLayout>
+
+				        <!-- 4.4 Rec/Play Button -->
+						<ImageView
+							android:id=              "@+id/CH3_Rec"
+							android:gravity=         "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.5"
+			                android:clickable=       "true"
+						    android:onClick=         "Play"
+							/>
+
+						<!-- 4.5 -->
+				        <LinearLayout
+							android:orientation=     "horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.15"     >
+							
+							<!-- Linke LED, Track geladen-->
+							<ImageView
+					             android:id=            "@+id/LoadedCh3"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1"    
+								 android:src=           "@drawable/WhiteLED"/>
+
+							<!-- Rechte LED -->
+							 <ImageView  
+					             android:id=            "@+id/PlayingCh3"
+							     android:gravity=    "center_horizontal"
+							     android:layout_width=    "match_parent"
+							     android:layout_height=    "match_parent"
+							     android:layout_weight=    "1"    
+								 android:src=         "@drawable/WhiteLED"/>
+						</LinearLayout>
+						
+					    <!-- Abstand unten -->
+						<ImageView
+							
+							android:gravity=    "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=    "1px"
+							android:layout_weight=    "0.1"    />
+				</LinearLayout>
+
+				<!-- CH4 -->
+				<LinearLayout
+				    android:orientation=    "vertical"
+				    android:layout_height=  "match_parent"
+				    android:layout_width=   "1px"
+				    android:layout_weight=    "0.85"    >
+				  
+					<!-- 5.2 Progress-->
+				    <ProgressBar
+					 android:id="@+id/progressBarCh4"
+					 style="?android:attr/progressBarStyleHorizontal"
+				     android:gravity=       "center_horizontal"
+					 android:layout_width=  "match_parent"
+				     android:layout_height= "1px"
+					 android:layout_weight= "0.9" 
+				     android:layout_marginBottom=  "20px"
+					 android:layout_marginLeft=    "20px"
+				     android:layout_marginRight=   "20px"
+				     android:layout_marginTop=     "5px"
+					 android:layout_alignParentTop="true"
+					 android:background="@drawable/circle_shape"
+					 android:indeterminate="false"
+					 android:max="100"
+					 android:progress="65"
+				     android:clickable=       "true"
+				     android:onClick=         "Getfile"
+					 android:progressDrawable="@drawable/circular_progress_bar" />
+				  
+					<!-- 5.3 -->
+					<LinearLayout
+						android:orientation=    "horizontal"
+						android:layout_width=   "match_parent"
+						android:layout_height=  "1px"
+						android:layout_weight=  "0.6"     >
+
+						<LinearLayout
+							android:orientation=    "vertical"
+							android:layout_height=  "match_parent"
+							android:layout_width=   "1px"
+							android:layout_weight=  "0.8"    >
+
+					        <!-- CH4 Number -->
+							<ImageView
+						         android:id=            "@+id/CH4_Number"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1.3"    
+								 android:src=           "@drawable/Ch4_green"/>
+
+							<!-- Abstand -->
+							<TextView
+								android:gravity=        "center_horizontal"   
+				                android:layout_width=   "match_parent"
+				                android:layout_height=  "match_parent"
+				                android:layout_weight=  "1.5"    />
+
+							 <!-- CH4 Edit -->
+							 <ImageButton  
+						         android:id=                   "@+id/CH4_Edit"
+							     android:gravity=              "center_horizontal"
+							     android:layout_width=         "match_parent"
+							     android:layout_height=        "match_parent"
+								 android:layout_marginBottom=  "5sp"
+						         android:layout_marginLeft=    "20px"
+				                 android:layout_marginRight=   "0sp"
+				                 android:layout_marginTop=     "0sp"
+							     android:layout_weight=        "0.6"    
+								 android:background=           "@drawable/Button_Rec_White_svg"
+					android:clickable=       "true"
+						         android:onClick=         "Recordmode"/>
+							</LinearLayout>
+
+							<!-- CH4 Volume -->
+							<LooperApp.VerticalSeekbar
+							android:id=                  "@+id/CH4_Volume"
+							android:layout_height=       "match_parent" 
+					        android:layout_width=        "0px"
+							android:layout_marginLeft=   "12px"
+							android:layout_marginRight=  "12px"
+							android:layout_weight=       "0.9"
+					        android:paddingLeft=         "2dp"
+	                        android:paddingRight=        "2dp"
+					        android:thumb =              "@drawable/Thumb2"
+					android:tickMark="@android:color/white"
+			 	            />
+					    </LinearLayout>
+
+				        <!-- 5.4 Rec/Play Button -->
+						<ImageView
+							android:id=              "@+id/CH4_Rec"
+							android:gravity=         "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.5" 
+			                android:clickable=       "true"
+						    android:onClick=         "Play"
+							/>
+
+						<!-- 5.5 -->
+				        <LinearLayout
+							android:orientation=     "horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.15"     >
+							
+							<!-- Linke LED, Track geladen -->
+							<ImageView
+					             android:id=            "@+id/LoadedCh4"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1"    
+								 android:src=           "@drawable/WhiteLED"/>
+
+							<!-- Rechte LED -->
+							 <ImageView  
+					             android:id=            "@+id/PlayingCh4"
+							     android:gravity=    "center_horizontal"
+							     android:layout_width=    "match_parent"
+							     android:layout_height=    "match_parent"
+							     android:layout_weight=    "1"    
+								 android:src=         "@drawable/WhiteLED"/>
+						</LinearLayout>
+						
+					    <!-- Abstand unten -->
+						<ImageView
+							
+							android:gravity=    "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=    "1px"
+							android:layout_weight=    "0.1"    />
+				</LinearLayout>
+
+				<!-- CH5 -->
+				<LinearLayout
+				    android:orientation=    "vertical"
+				    android:layout_height=  "match_parent"
+				    android:layout_width=   "1px"
+				    android:layout_weight=    "0.85"    >
+				  
+					<!-- 6.2 Progress-->
+				   <ProgressBar
+					 android:id="@+id/progressBarCh5"
+					 style="?android:attr/progressBarStyleHorizontal"
+				     android:gravity=       "center_horizontal"
+					 android:layout_width=  "match_parent"
+				     android:layout_height= "1px"
+					 android:layout_weight= "0.9" 
+				     android:layout_marginBottom=  "20px"
+					 android:layout_marginLeft=    "20px"
+				     android:layout_marginRight=   "20px"
+				     android:layout_marginTop=     "5px"
+					 android:layout_alignParentTop="true"
+					 android:background="@drawable/circle_shape"
+					 android:indeterminate="false"
+					 android:max="100"
+					 android:progress="65"
+				     android:clickable=       "true"
+				     android:onClick=         "Getfile"
+					 android:progressDrawable="@drawable/circular_progress_bar" />
+				  
+					<!-- 6.3 -->
+					<LinearLayout
+						android:orientation=    "horizontal"
+						android:layout_width=   "match_parent"
+						android:layout_height=  "1px"
+						android:layout_weight=  "0.6"     >
+
+						<LinearLayout
+							android:orientation=    "vertical"
+							android:layout_height=  "match_parent"
+							android:layout_width=   "1px"
+							android:layout_weight=  "0.8"    >
+
+					        <!-- CH5 Number -->
+							<ImageView
+						         android:id=            "@+id/CH5_Number"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1.3"    
+								 android:src=           "@drawable/Ch5_green"/>
+
+							<!-- Abstand -->
+							<TextView
+								android:gravity=        "center_horizontal"   
+				                android:layout_width=   "match_parent"
+				                android:layout_height=  "match_parent"
+				                android:layout_weight=  "1.5"    />
+
+							 <!-- CH5 Edit -->
+							 <ImageButton  
+						         android:id=                   "@+id/CH5_Edit"
+							     android:gravity=              "center_horizontal"
+							     android:layout_width=         "match_parent"
+							     android:layout_height=        "match_parent"
+								 android:layout_marginBottom=  "5sp"
+						         android:layout_marginLeft=    "20px"
+				                 android:layout_marginRight=   "0sp"
+				                 android:layout_marginTop=     "0sp"
+							     android:layout_weight=        "0.6"    
+								 android:background=           "@drawable/Button_Rec_White_svg"
+					android:clickable=       "true"
+						         android:onClick=         "Recordmode"/>
+							</LinearLayout>
+
+							<!-- CH5 Volume -->
+							<LooperApp.VerticalSeekbar
+							android:id=                  "@+id/CH5_Volume"
+							android:layout_height=       "match_parent" 
+					        android:layout_width=        "0px"
+							android:layout_marginLeft=   "12px"
+							android:layout_marginRight=  "12px"
+							android:layout_weight=       "0.9"
+					        android:paddingLeft=         "2dp"
+	                        android:paddingRight=        "2dp"
+					        android:thumb =              "@drawable/Thumb2"
+					android:tickMark="@android:color/white"
+			 	            />
+					    </LinearLayout>
+
+				        <!-- 6.4 Rec/Play Button -->
+						<ImageView
+							android:id=              "@+id/CH5_Rec"
+							android:gravity=         "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.5"  
+			                android:clickable=       "true"
+						    android:onClick=         "Play"
+							/>
+
+						<!-- 6.5 -->
+				        <LinearLayout
+							android:orientation=     "horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.15"     >
+							
+							<!-- Linke LED, Track geladen -->
+							<ImageView
+					             android:id=            "@+id/LoadedCh5"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1"    
+								 android:src=           "@drawable/WhiteLED"/>
+
+							<!-- Rechte LED , Play Track-->
+							 <ImageView  
+					             android:id=            "@+id/PlayingCh5"
+							     android:gravity=         "center_horizontal"
+							     android:layout_width=    "match_parent"
+							     android:layout_height=   "match_parent"
+							     android:layout_weight=   "1"    
+								 android:src=             "@drawable/WhiteLED"/>
+						</LinearLayout>
+						
+					    <!-- Abstand unten -->
+						<ImageView
+							
+							android:gravity=		"center_horizontal"
+							android:layout_width=   "match_parent"
+							android:layout_height=  "1px"
+							android:layout_weight=  "0.1"    />
+				</LinearLayout>
+
+				<!-- CH Drum -->
+				<LinearLayout
+				    android:orientation=    "vertical"
+				    android:layout_height=  "match_parent"
+				    android:layout_width=   "1px"
+				    android:layout_weight=    "0.85"    >
+				  
+					<!-- 7.2 Progress-->
+				    <ProgressBar
+					 android:id="@+id/progressBarChD"
+					 style="?android:attr/progressBarStyleHorizontal"
+				     android:gravity=       "center_horizontal"
+					 android:layout_width=  "match_parent"
+				     android:layout_height= "1px"
+					 android:layout_weight= "0.9" 
+				     android:layout_marginBottom=  "20px"
+					 android:layout_marginLeft=    "20px"
+				     android:layout_marginRight=   "20px"
+				     android:layout_marginTop=     "5px"
+					 android:layout_alignParentTop="true"
+					 android:background="@drawable/circle_shape"
+					 android:indeterminate="false"
+					 android:max="100"
+					 android:progress="65"
+				     android:clickable=       "true"
+				     android:onClick=         "Getfile"
+					 android:progressDrawable="@drawable/circular_progress_bar" />
+				  
+					<!-- 7.3 -->
+					<LinearLayout
+						android:orientation=    "horizontal"
+						android:layout_width=   "match_parent"
+						android:layout_height=  "1px"
+						android:layout_weight=  "0.6"     >
+
+						<LinearLayout
+							android:orientation=    "vertical"
+							android:layout_height=  "match_parent"
+							android:layout_width=   "1px"
+							android:layout_weight=  "0.8"    >
+
+					        <!-- CHD Number -->
+							<ImageView
+						         android:id=            "@+id/CHD_Number"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1.3"    
+								 android:src=           "@drawable/ChD_green"/>
+
+							<!-- Abstand -->
+							<TextView
+								android:gravity=        "center_horizontal"   
+				                android:layout_width=   "match_parent"
+				                android:layout_height=  "match_parent"
+				                android:layout_weight=  "1.5"    />
+
+							 <!-- CHD Edit -->
+							 <ImageButton  
+						         android:id=                   "@+id/CHD_Edit"
+							     android:gravity=              "center_horizontal"
+							     android:layout_width=         "match_parent"
+							     android:layout_height=        "match_parent"
+								 android:layout_marginBottom=  "5sp"
+						         android:layout_marginLeft=    "20px"
+				                 android:layout_marginRight=   "0sp"
+				                 android:layout_marginTop=     "0sp"
+							     android:layout_weight=        "0.6"    
+								 android:background=           "@drawable/Button_Rec_White_svg"
+					android:clickable=       "true"
+						         android:onClick=         "Recordmode"/>
+							</LinearLayout>
+
+							<!-- CHD Volume -->
+							<LooperApp.VerticalSeekbar
+							android:id=                  "@+id/CHD_Volume"
+							android:layout_height=       "match_parent" 
+					        android:layout_width=        "0px"
+							android:layout_marginLeft=   "12px"
+							android:layout_marginRight=  "12px"
+							android:layout_weight=       "0.9"
+					        android:paddingLeft=         "2dp"
+	                        android:paddingRight=        "2dp"
+					        android:thumb =              "@drawable/Thumb2"
+					android:tickMark="@android:color/white"
+			 	            />
+					    </LinearLayout>
+
+				        <!-- 7.4 Rec/Play Button -->
+						<ImageView
+							android:id=              "@+id/CHD_Rec"
+							android:gravity=         "center_horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.5"  
+			                android:clickable=       "true"
+						    android:onClick=         "Play"
+							/>
+
+						<!-- 7.5 -->
+				        <LinearLayout
+							android:orientation=     "horizontal"
+							android:layout_width=    "match_parent"
+							android:layout_height=   "1px"
+							android:layout_weight=   "0.15"     >
+							
+							<!-- Linke LED -->
+							<ImageView
+					             android:id=            "@+id/LoadedChD"
+							     android:gravity=       "center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1"    
+								 android:src=           "@drawable/WhiteLED"/>
+
+							<!-- Rechte LED -->
+							 <ImageView  
+					             android:id=            "@+id/PlayingChD"
+							     android:gravity=		"center_horizontal"
+							     android:layout_width=  "match_parent"
+							     android:layout_height= "match_parent"
+							     android:layout_weight= "1"    
+								 android:src=			"@drawable/WhiteLED"/>
+						</LinearLayout>
+						
+					    <!-- Abstand unten -->
+						<ImageView
+							
+							android:gravity=        "center_horizontal"
+							android:layout_width=   "match_parent"
+							android:layout_height=  "1px"
+							android:layout_weight=  "0.1"    />
+				</LinearLayout>
+        <TextView
+			android:gravity=        "center_horizontal"
+			android:layout_height=  "match_parent"
+			android:layout_width=   "1px"
+			android:layout_weight=  "0.23"    />
+  </LinearLayout>
+
+</LinearLayout>
