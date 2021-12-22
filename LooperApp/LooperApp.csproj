@@ -93,6 +93,7 @@
     <Compile Include="Helper\VerticalSeekbar.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="RemoteProject\LooperRemote.ino" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
@@ -426,6 +427,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Applause.mp3" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.
